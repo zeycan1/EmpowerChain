@@ -36,7 +36,7 @@ source $HOME/.bash_profile
 
 ### Empower —> Cosmos transfer ($MPWR)
 ```
-empowerd tx ibc-transfer transfer transfer channel-2 <cosmos-address> 100000umpwr --from=$WALLET --chain-id circulus-1 --packet-timeout-height 0-0 --fees 200umpwr
+empowerd tx ibc-transfer transfer transfer channel-2 $COSMOS_WALLET_ADDRESS 100000umpwr --from=$WALLET --chain-id circulus-1 --packet-timeout-height 0-0 --fees 200umpwr
 ```
 
 ### Cosmos —> Empower halfback transfer ($MPWR)
@@ -89,7 +89,7 @@ source $HOME/.bash_profile
 
 ### Empower —> Stargaze transfer ($MPWR)
 ```
-empowerd tx ibc-transfer transfer transfer channel-1 <stargaze-wallet-address> 100000umpwr --from=$WALLET --chain-id circulus-1 --packet-timeout-height 0-0 --fees 200umpwr
+empowerd tx ibc-transfer transfer transfer channel-1 $STARGAZE_WALLET_ADDRESS 100000umpwr --from=$WALLET --chain-id circulus-1 --packet-timeout-height 0-0 --fees 200umpwr
 ```
 
 ### Stargaze —> Empower halfback transfer ($MPWR)
@@ -142,7 +142,7 @@ source $HOME/.bash_profile
 
 ### Empower —> Osmosis transfer ($MPWR)
 ```
-empowerd tx ibc-transfer transfer transfer channel-0 <osmosis-wallet-address> 100000umpwr --from=$WALLET --chain-id circulus-1 --packet-timeout-height 0-0 --fees 200umpwr
+empowerd tx ibc-transfer transfer transfer channel-0 $OSMOSIS_WALLET_ADDRESS 100000umpwr --from=$WALLET --chain-id circulus-1 --packet-timeout-height 0-0 --fees 200umpwr
 ```
 
 ### Osmosis —> Empower halfback transfer ($MPWR)
