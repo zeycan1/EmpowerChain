@@ -1,7 +1,8 @@
 # Empower Chain Testnet IBC Tasks
 [Empower Testnet Explorer](https://empowerchain.exploreme.pro/dashboard)
 
-## 1) IBC Transfer [EMPOWER-COSMOS] channel-2 <> channel-2765
+## 1) IBC Transfer [EMPOWER-COSMOS] channel-2 <> channel-2765 
+     
 ### install go v1.20
 ```
 ver="1.20"
@@ -22,18 +23,12 @@ git checkout v10.0.1
 make install
 ```
 
-### Cosmos wallet variables setup (also import your Empower Chain wallet mnemonic)
+### We create a Cosmos wallet (don't forget to register Mnemonics)
 ```
-COSMOS_WALLET=cosmos-wallet
-echo "export COSMOS_WALLET=cosmos-wallet" >> $HOME/.bash_profile
-gaiad keys add $COSMOS_WALLET --keyring-backend test --recover
-```
-```
-COSMOS_WALLET_ADDRESS=$(gaiad keys show $COSMOS_WALLET --keyring-backend test -a)
-echo "export COSMOS_WALLET_ADDRESS="$COSMOS_WALLET_ADDRESS >> $HOME/.bash_profile
-source $HOME/.bash_profile
+gaiad keys add walletname
 ```
 
+### Let's move on to the tasks now :)
 ### Empower —> Cosmos transfer ($MPWR)
 ```
 empowerd tx ibc-transfer transfer transfer channel-2 $COSMOS_WALLET_ADDRESS 100000umpwr --from=$WALLET --chain-id circulus-1 --packet-timeout-height 0-0 --fees 200umpwr
@@ -41,12 +36,12 @@ empowerd tx ibc-transfer transfer transfer channel-2 $COSMOS_WALLET_ADDRESS 1000
 
 ### Cosmos —> Empower halfback transfer ($MPWR)
 ```
-gaiad tx ibc-transfer transfer transfer channel-2765 <empower-wallet-address> 50000ibc/C3D75AA5082B8EEC8E6DE916F0CA9C1C71978A6BB0FA5AAE3E5ABE81BAF57B42 --from=$COSMOS_WALLET --fees 5000uatom --chain-id theta-testnet-001 --keyring-backend test --node https://rpc.state-sync-01.theta-testnet.polypore.xyz:443
+gaiad tx ibc-transfer transfer transfer channel-2765 <empower-wallet-address> 50000ibc/C3D75AA5082B8EEC8E6DE916F0CA9C1C71978A6BB0FA5AAE3E5ABE81BAF57B42 --from=$COSMOS_WALLET --fees 5000uatom --chain-id theta-testnet-001 --node https://rpc.state-sync-01.theta-testnet.polypore.xyz:443
 ```
 
 ### Cosmos —> Empower transfer ($ATOM)
 ```
-gaiad tx ibc-transfer transfer transfer channel-2765 <empower-wallet-address> 100000uatom --from=$COSMOS_WALLET --fees 5000uatom --chain-id theta-testnet-001 --keyring-backend test --node https://rpc.state-sync-01.theta-testnet.polypore.xyz:443
+gaiad tx ibc-transfer transfer transfer channel-2765 <empower-wallet-address> 100000uatom --from=$COSMOS_WALLET --fees 5000uatom --chain-id theta-testnet-001 --node https://rpc.state-sync-01.theta-testnet.polypore.xyz:443
 ```
 
 [Cosmos Testnet Explorer](https://testnet.mintscan.io/cosmoshub-testnet)
@@ -75,17 +70,11 @@ git checkout v10.0.0-beta.1
 make install
 ```
 
-### Stargaze wallet variables setup (also import your Empower Chain wallet mnemonic)
+### We create a Stargaze wallet (don't forget to register Mnemonics)
 ```
-STARGAZE_WALLET=stargaze-wallet
-echo "export STARGAZE_WALLET=stargaze-wallet" >> $HOME/.bash_profile
-starsd keys add $STARGAZE_WALLET --keyring-backend test --recover
+starsd keys add walletname
 ```
-```
-STARGAZE_WALLET_ADDRESS=$(starsd keys show $STARGAZE_WALLET --keyring-backend test -a)
-echo "export STARGAZE_WALLET_ADDRESS="$STARGAZE_WALLET_ADDRESS >> $HOME/.bash_profile
-source $HOME/.bash_profile
-```
+
 
 ### Empower —> Stargaze transfer ($MPWR)
 ```
@@ -94,12 +83,12 @@ empowerd tx ibc-transfer transfer transfer channel-1 $STARGAZE_WALLET_ADDRESS 10
 
 ### Stargaze —> Empower halfback transfer ($MPWR)
 ```
-starsd tx ibc-transfer transfer transfer channel-459 <empower-wallet-address> 50000ibc/B077B9DE697E073055B12CEB81C0FBF259A2D418230FDF51EB348CDAD8D65FE8 --from=$STARGAZE_WALLET --fees 2000ustars --chain-id elgafar-1 --keyring-backend test --node https://stargaze-testnet-rpc.polkachu.com:443
+starsd tx ibc-transfer transfer transfer channel-459 <empower-wallet-address> 50000ibc/B077B9DE697E073055B12CEB81C0FBF259A2D418230FDF51EB348CDAD8D65FE8 --from=$STARGAZE_WALLET --fees 2000ustars --chain-id elgafar-1 --node https://stargaze-testnet-rpc.polkachu.com:443
 ```
 
 ### Stargaze —> Empower transfer ($STARS)
 ```
-starsd tx ibc-transfer transfer transfer channel-459 <empower-wallet-address> 100000ustars --from=$STARGAZE_WALLET --fees 2000ustars --chain-id elgafar-1 --keyring-backend test --node https://stargaze-testnet-rpc.polkachu.com:443
+starsd tx ibc-transfer transfer transfer channel-459 <empower-wallet-address> 100000ustars --from=$STARGAZE_WALLET --fees 2000ustars --chain-id elgafar-1 --node https://stargaze-testnet-rpc.polkachu.com:443
 ```
 
 [Stargaze Testnet Explorer](https://testnet-explorer.publicawesome.dev/stargaze)
@@ -128,16 +117,10 @@ git checkout v15.1.0-testnet
 make install
 ```
 
-### Osmosis wallet variables setup (also import your Empower Chain wallet mnemonic)
+### We create a Osmo wallet (don't forget to register Mnemonics)
 ```
-OSMOSIS_WALLET=osmosis-wallet
-echo "export OSMOSIS_WALLET=osmosis-wallet" >> $HOME/.bash_profile
-osmosisd keys add $OSMOSIS_WALLET --keyring-backend test --recover
-```
-```
-OSMOSIS_WALLET_ADDRESS=$(osmosisd keys show $OSMOSIS_WALLET --keyring-backend test -a)
-echo "export OSMOSIS_WALLET_ADDRESS="$OSMOSIS_WALLET_ADDRESS >> $HOME/.bash_profile
-source $HOME/.bash_profile
+osmosisd keys add walletname
+
 ```
 
 ### Empower —> Osmosis transfer ($MPWR)
@@ -146,18 +129,26 @@ empowerd tx ibc-transfer transfer transfer channel-0 $OSMOSIS_WALLET_ADDRESS 100
 ```
 
 ### Osmosis —> Empower halfback transfer ($MPWR)
+
+
 ```
-osmosisd tx ibc-transfer transfer transfer channel-155 <empower-wallet-address> 50000ibc/E0FDA81C892EEA14C2398519260AA706A068B36AE5BE8AE9FAD8EB1540A6E02E --from=$OSMOSIS_WALLET --fees 5000uosmo --chain-id osmo-test-5 --keyring-backend test --node https://rpc.osmotest5.osmosis.zone:443
+tx ibc-transfer transfer transfer channel-155 <empower-wallet-address> 50000ibc/E0FDA81C892EEA14C2398519260AA706A068B36AE5BE8AE9FAD8EB1540A6E02E --from=$OSMOSIS_WALLET --fees 5000uosmo --chain-id osmo-test-5 --node https://rpc.osmotest5.osmosis.zone:443
 ```
 
 ### Osmosis —> Empower transfer ($aUSDC) (before to do this task, you must swap your $OSMO to $axUSDC in https://testnet.osmosis.zone/?from=OSMO&to=aUSDC)
 ```
-osmosisd tx ibc-transfer transfer transfer channel-155 <empower-wallet-address> 100000ibc/6F34E1BD664C36CE49ACC28E60D62559A5F96C4F9A6CCE4FC5A67B2852E24CFE --from=$OSMOSIS_WALLET --fees 5000uosmo --chain-id osmo-test-5 --keyring-backend test --node https://rpc.osmotest5.osmosis.zone:443
+osmosisd tx ibc-transfer transfer transfer channel-155 <empower-wallet-address> 100000ibc/6F34E1BD664C36CE49ACC28E60D62559A5F96C4F9A6CCE4FC5A67B2852E24CFE --from=$OSMOSIS_WALLET --fees 5000uosmo --chain-id osmo-test-5 --node https://rpc.osmotest5.osmosis.zone:443
 ```
 
 ### Osmosis —> Empower transfer ($OSMO)
 ```
-osmosisd tx ibc-transfer transfer transfer channel-155 <empower-wallet-address> 100000uosmo --from=$OSMOSIS_WALLET --fees 5000uosmo --chain-id osmo-test-5 --keyring-backend test --node https://rpc.osmotest5.osmosis.zone:443
+osmosisd tx ibc-transfer transfer transfer channel-155 <empower-wallet-address> 100000uosmo --from=$OSMOSIS_WALLET --fees 5000uosmo --chain-id osmo-test-5 --node https://rpc.osmotest5.osmosis.zone:443
 ```
 
 [Osmosis Testnet Explorer](https://testnet.mintscan.io/osmosis-testnet)
+
+
+### That's all for all the tasks.... Do not forget to fill out the form after completing these procedures.
+
+ https://forms.gle/JJDeX5AVaZnznvqv8
+
