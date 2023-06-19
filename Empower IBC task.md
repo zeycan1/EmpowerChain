@@ -29,6 +29,11 @@ gaiad keys add walletname
 ```
 
 ### Let's move on to the tasks now :)
+### We need some Atom for the mission. 
+### Get osmo here.https://faucet.osmotest5.osmosis.zone/
+### Swap some of it to atom from here
+### https://frontier.osmosis.zone/?from=ATOM&to=OSMO
+### Use the rest in the osmo mission
 ### Empower —> Cosmos transfer ($MPWR)
 ```
 empowerd tx ibc-transfer transfer transfer channel-2 $COSMOS_WALLET_ADDRESS 100000umpwr --from=$WALLET --chain-id circulus-1 --packet-timeout-height 0-0 --fees 200umpwr
