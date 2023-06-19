@@ -157,3 +157,5 @@ osmosisd tx ibc-transfer transfer transfer channel-155 <empower-wallet-address> 
 
  https://forms.gle/JJDeX5AVaZnznvqv8
 
+ ### EĞER REHBER İŞİNİZE YARADIYSA VE BEĞENDİYSENİZ FORKLAR VE YILDIZLARSANIZ SEVİNİRİM :))
+
