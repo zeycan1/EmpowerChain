@@ -79,7 +79,8 @@ make install
 ```
 starsd keys add walletname
 ```
-
+### For stargaze tokens, you can go to the discord and request a testtoken from faucet.
+### https://discord.com/channels/755548171941445642/940653213022031912
 
 ### Empower —> Stargaze transfer ($MPWR)
 ```
